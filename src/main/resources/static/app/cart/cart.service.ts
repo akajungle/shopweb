@@ -142,7 +142,8 @@ let options = new RequestOptions({ headers: headers });
     //let headers = new Headers({ 'Accept': 'application/json' });
     var sCartId = this.getCartId(cartId);
     if (sCartId==-1) {
-      return null;
+      this.cart = new Cart();
+      return Observable.of(this.cart);
     }
     if(this.cart) {
       return Observable.of(this.cart);

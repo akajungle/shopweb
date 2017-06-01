@@ -31,27 +31,6 @@ var CartComponent = (function () {
         cd.quantity = this.product.quantity;
         cd.productId = this.product.id;
         cd.price = this.product.price;
-        /*
-            this.route.params.subscribe(params => {
-               this.productId = +params['id'];
-            });
-        
-        
-            this.productService.getProduct(this.productId).do
-            (p => {
-              console.log("????????????find????????????"+this.productId);
-                  cd.quantity = this.product.quantity;
-            cd.productId = this.product.id;
-            cd.price = this.product.price;
-                            this.product = p;
-                          });
-        
-        console.log("+++++++"+JSON.stringify(cd)+"----------------");
-        
-            this.observableCart = new Observable(observer => {this.cartService.updateCart(this.cartId,JSON.stringify(cd))});
-            this.observableCart.subscribe(v => this.cart=v, e => this.error = true, () => this.finished=true);
-            return this.observableCart;*/
-        //.subscribe((product: Product) => this.product = product);
         this.cartService.updateCart(this.cartId, JSON.stringify(cd))
             .subscribe(function (cart) {
             _this.cart = cart;
@@ -79,7 +58,7 @@ var CartComponent = (function () {
 }());
 CartComponent = __decorate([
     core_1.Component({
-        template: "\n   <div *ngIf=\"cart\">\n    <h3><label>cart Id:</label>{{ cart.id }}<label>Order Date:</label>{{cart.orderDate}}<label>Session Id</label>{{cart.sessionId}}</h3>\n  <table>\n  <tr>\n    <th>id</th>\n    <th>quantity</th>\n    <th>price</th>\n    <th>product name</th>\n  </tr>\n    <tr class=\"items\" *ngFor=\"let cartDetail of cart.cartDetails\">\n        <td><span class=\"badge\">{{cartDetail.id}}</span></td>\n        <td>{{ cartDetail.quantity }}</td>\n        <td>{{ cartDetail.price }}</td>\n    </tr>\n  </table>\n    <p>\n      <button (click)=\"checkout()\">Check out</button>\n      <button (click)=\"gotoProduct()\">Continue Shopping</button>\n    </p>\n    </div>\n  "
+        template: "\n  \n   <div *ngIf=\"cart\">\n    <h3><label>cart Id:</label>{{ cart.id }}<label>Order Date:</label>{{cart.orderDate}}<label>Session Id</label>{{cart.sessionId}}</h3>\n  <table>\n  <tr>\n    <th>id</th>\n    <th>quantity</th>\n    <th>price</th>\n    <th>product name</th>\n  </tr>\n    <tr class=\"items\" *ngFor=\"let cartDetail of cart.cartDetails\">\n        <td><span class=\"badge\">{{cartDetail.id}}</span></td>\n        <td>{{ cartDetail.quantity }}</td>\n        <td>{{ cartDetail.price }}</td>\n    </tr>\n  </table>\n    <p>\n      <button (click)=\"checkout()\">Check out</button>\n      <button (click)=\"gotoProduct()\">Continue Shopping</button>\n    </p>\n    </div>\n  "
     }),
     __metadata("design:paramtypes", [product_service_1.ProductService,
         router_1.ActivatedRoute,

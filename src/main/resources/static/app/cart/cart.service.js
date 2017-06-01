@@ -136,7 +136,8 @@ this.setCookie('cartId', ''+this.cart.id);
         //let headers = new Headers({ 'Accept': 'application/json' });
         var sCartId = this.getCartId(cartId);
         if (sCartId == -1) {
-            return null;
+            this.cart = new Cart();
+            return Observable_1.Observable.of(this.cart);
         }
         if (this.cart) {
             return Observable_1.Observable.of(this.cart);

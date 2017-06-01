@@ -11,6 +11,7 @@ import {CartService, Cart, CartDetail} from './cart.service';
 
 @Component({
   template: `
+  
    <div *ngIf="cart">
     <h3><label>cart Id:</label>{{ cart.id }}<label>Order Date:</label>{{cart.orderDate}}<label>Session Id</label>{{cart.sessionId}}</h3>
   <table>
@@ -64,27 +65,6 @@ export class CartComponent implements OnInit {
     cd.productId = this.product.id;
     cd.price = this.product.price;
 
-/*
-    this.route.params.subscribe(params => {
-       this.productId = +params['id']; 
-    });
-
-
-    this.productService.getProduct(this.productId).do
-    (p => {
-      console.log("????????????find????????????"+this.productId);
-          cd.quantity = this.product.quantity;
-    cd.productId = this.product.id;
-    cd.price = this.product.price;
-                    this.product = p;
-                  });
-
-console.log("+++++++"+JSON.stringify(cd)+"----------------");
-
-    this.observableCart = new Observable(observer => {this.cartService.updateCart(this.cartId,JSON.stringify(cd))});
-    this.observableCart.subscribe(v => this.cart=v, e => this.error = true, () => this.finished=true);
-    return this.observableCart;*/
-    //.subscribe((product: Product) => this.product = product);
 this.cartService.updateCart(this.cartId,JSON.stringify(cd))
       .subscribe(
       (cart: Cart) => {

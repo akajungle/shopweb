@@ -35,7 +35,7 @@ var ProductListComponent = (function () {
 }());
 ProductListComponent = __decorate([
     core_1.Component({
-        template: "\n  <table>\n  <tr>\n    <th>id</th>\n    <th>name</th>\n    <th>price</th>\n    <th>inventory</th>\n    <th>order</th>\n  </tr>\n    <tr class=\"items\" *ngFor=\"let product of products | async\">\n        <td><span class=\"badge\">{{ product.id }}</span></td>\n        <td>{{ product.name }}</td>\n        <td>{{ product.price }}</td>\n        <td>{{ product.quantity }}</td>\n        <td><button (click)=\"onSelect(product)\">Order Now</button></td>\n    </tr>\n  </table>\n  "
+        template: "\n\n  <table>\n  <tr>\n    <th>id</th>\n    <th>name</th>\n    <th>price</th>\n    <th>inventory</th>\n    <th>order</th>\n  </tr>\n    <tr class=\"items\" *ngFor=\"let product of products | async\">\n        <td><span class=\"badge\">{{ product.id }}</span></td>\n        <td>{{ product.name }}</td>\n        <td>{{ product.price }}</td>\n        <td>{{ product.quantity }}</td>\n        <td><button (click)=\"onSelect(product)\">Order Now</button></td>\n    </tr>\n  </table>\n  "
     }),
     __metadata("design:paramtypes", [product_service_1.ProductService,
         router_1.ActivatedRoute,

@@ -7,6 +7,7 @@ import {Product, ProductService}  from './product.service';
 
 @Component({
   template: `
+
   <table>
   <tr>
     <th>id</th>
